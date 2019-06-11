@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="description" content="Bio and CV">
+    <meta name="keywords" content="life,bio,portfolio,blackwiz4rd,luca,attanasio">
+    <meta name="author" content="Luca Attanasio">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static "home/style.css"%}" />
+    <link rel="stylesheet" href="{% static "home/scripts/assets/animate.css"%}" />
+
+    <title>{% block title %}blackwiz4rd{% endblock %}</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="{% static "home/scripts/parallax.min.js"%}"></script>
+
+    <script src="{% static "home/scripts/assets/jquery.lettering.js"%}"></script>
+    <script src="{% static "home/scripts/jquery.textillate.js"%}"></script>
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){     
+            /*event.preventDefault();*/
+            $('html,body').animate({scrollTop:$(this.hash).offset().top}, 800);
+        });
+
+        $(".email").click(function(event){     
+            $('.email').text('luca_attanasio@me.com');
+        });
+    });
+
+    $(function () {
+       $('.description')
+            .textillate({ in: { effect: 'bounceInLeft' }});
+    })
+
+    /*$(function () {
+       $('.textColor')
+            .textillate({ initialDelay: 2000, in: { effect: 'swing', shuffle: true } });
+    })*/
+
+    </script>
+</head>
+
+<body>
+    <div id="nav">
+        {% block nav %}
+        <ul>
+            <li><a href="{% url 'index' %}"><img src="{% static "home/imgs/logo.png"%}" class="logo"/></a></li>
+            <li><a href="{% url 'index' %}#paragraph-one" class="scroll">INTRO</a></li>
+            <li><a href="{% url 'index' %}#paragraph-two" class="scroll">STUDENT CAREEER</a></li>
+            <li><a href="{% url 'index' %}#paragraph-three" class="scroll">PORTFOLIO</a></li>
+            <li><a href="{% url 'index' %}#paragraph-four" class="scroll">EXPERIENCE</a></li>
+            <li><a href="{% url 'index' %}#paragraph-five" class="scroll">CONTACTS</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <div id="footer">
+        {% block footer %}
+        <ul>
+            <a href="https://www.instagram.com/luca_attanasio/"><li><img src="{% static "home/imgs/icons/instagramH.svg"%}"/></li></a>
+            <a href="http://facebook.com/luca.attanasio96"><li><img src="{% static "home/imgs/icons/facebookH.svg"%}"/></li></a>
+            <a href="https://www.youtube.com/user/blackw1z4rd"><li><img src="{% static "home/imgs/icons/youtubeH.svg"%}"/></li></a>
+            <a href="https://github.com/blackwiz4rd"><li><img src="{% static "home/imgs/icons/githubH.svg"%}"/></li></a>
+            </br>
+            <li><i>"It is not knowledge, but the act of learning, </br>not possession but the act of getting there,</br> which grants the greatest enjoyment."</i></li>
+            <li>C. F. Gauss</li></br>
+            <li>©2017 by Luca Attanasio. Created with django.</li>
+        </ul>
+
+        {% endblock %}
+    </div>
+</body>
+</html>
