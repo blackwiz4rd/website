@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
+from django.shortcuts import redirect
 
 # Create your views here.
 from django.http import HttpResponse
@@ -9,19 +10,19 @@ from django.core.mail import send_mail
 
 def index(request):
     site = 'https://blackwiz4rd.github.io'
-    return render(request, site)
+    return redirect(site)
 
 def resume(request):
     drive = 'https://drive.google.com/drive/folders/1I4cr069Hqpecq6MbcY5tIQ18dPuHCusB?usp=sharing'
-    return render(request, drive)
+    return redirect(drive)
 
 def transcript(request):
     drive = 'https://drive.google.com/drive/folders/1I4cr069Hqpecq6MbcY5tIQ18dPuHCusB?usp=sharing'
-    return render(request, drive)
+    return redirect(drive)
 
 def thesis(request):
     drive = drive = 'https://drive.google.com/drive/folders/1I4cr069Hqpecq6MbcY5tIQ18dPuHCusB?usp=sharing'
-    return render(request, drive)
+    return redirect(drive)
 
 def career(request):
     return render(request, 'home/career.html')
