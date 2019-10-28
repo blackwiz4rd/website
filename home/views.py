@@ -8,16 +8,20 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 
 def index(request):
-    return render(request, 'home/index.html')
+    site = 'https://blackwiz4rd.github.io'
+    return render(request, site)
 
 def resume(request):
-    return render(request, 'home/resume.html')
+    drive = 'https://drive.google.com/drive/folders/1I4cr069Hqpecq6MbcY5tIQ18dPuHCusB?usp=sharing'
+    return render(request, drive)
 
 def transcript(request):
-    return render(request, 'home/transcript.html')
+    drive = 'https://drive.google.com/drive/folders/1I4cr069Hqpecq6MbcY5tIQ18dPuHCusB?usp=sharing'
+    return render(request, drive)
 
 def thesis(request):
-    return render(request, 'home/thesis.html')
+    drive = drive = 'https://drive.google.com/drive/folders/1I4cr069Hqpecq6MbcY5tIQ18dPuHCusB?usp=sharing'
+    return render(request, drive)
 
 def career(request):
     return render(request, 'home/career.html')
@@ -44,7 +48,7 @@ def send_email(request):
 		    fail_silently=False,
 		)
 		return email_sent(request)
-	else:	
+	else:
 		return email_unsuccessful(request)
 
 def validateEmail( email ):
