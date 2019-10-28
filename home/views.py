@@ -21,8 +21,8 @@ def transcript(request):
     return redirect(drive)
 
 def thesis(request):
-    drive = drive = 'https://drive.google.com/drive/folders/1I4cr069Hqpecq6MbcY5tIQ18dPuHCusB?usp=sharing'
-    return redirect(drive)
+    site = 'https://blackwiz4rd.github.io/projects/2018-07-16-dash/'
+    return redirect(site)
 
 def career(request):
     return render(request, 'home/career.html')
